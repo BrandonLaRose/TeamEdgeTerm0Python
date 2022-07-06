@@ -8,9 +8,9 @@ import random
 	# Let's try to make a simple program that responds to the user.
 	# We're going to recreate the Magic 8 Ball!!!
 			
-			# Never heard of it? That's ok!
+			# Never heard of it? You suck!
 
-					# You got this!
+					# You got this...Sike!
 
   # -------------------------------------------- 
 
