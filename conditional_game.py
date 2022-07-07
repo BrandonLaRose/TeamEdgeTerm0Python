@@ -32,6 +32,8 @@ import random
   # --------------------------------------------
 
 
+print("Ask anything and the magic 8ball will respond")
+input("Ask a question or something: ")
 
 
 
@@ -40,7 +42,7 @@ import random
 
 
 
-
+import random
 
 
 
@@ -51,31 +53,32 @@ import random
 
 	# Randomly select a number from 0 - 19 
 	# Use that to select from the following responses:
-		# 0 - It is certain.
-		# 1 - It is decidedly so.
-		# 2 - Without a doubt.
-		# 3 - Yes - definitely.
-		# 4 - You may rely on it.
-		# 5 - As I see it, yes.
-		# 6 - Most likely.
-		# 7 - Outlook good.
-		# 8 - Yes.
-		# 9 - Signs point to yes.
-		# 10 - Reply hazy, try again.
-		# 11 - Ask again later.
-		# 12 - Better not tell you now.
-		# 13 - Cannot predict now.
-		# 14 - Concentrate and ask again.
-		# 15 - Don't count on it.
-		# 16 - My reply is no.
-		# 17 - My sources say no.
-		# 18 - Outlook not so good.
-		# 19 - Very doubtful.
+t0 = "It is certain."
+t1 = "It is decidedly so."
+t2 = "Without a doubt."
+t3 = "Yes - definitely."
+t4 = "You may rely on it."
+t5 = "As I see it, yes."
+t6 = "Most likely."
+t7 = "Outlook good."
+t8 = "Yes."
+t9 = "Signs point to yes."
+t10 = "Reply hazy, try again."
+t11 = "Ask again later."
+t12 = "Better not tell you now."
+t13 = "Cannot predict now."
+t14 = "Concentrate and ask again."
+t15 = "Don't count on it."
+t16 = "My reply is no."
+t17 = "My sources say no."
+t18 = "Outlook not so good."
+t19 = "Very doubtful."
 
 	# Look up random.rand_int to see how you can use it to select a random number.
 
   # -------------------------------------------- 
-
+outcome=(random.randint(0, 19))
+print(vars("t"+str(outcome)))
 
 
 
