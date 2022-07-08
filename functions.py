@@ -19,30 +19,51 @@ print("------------------- Challenge 1 -------------------")
 
 # **** Challenge 1: Problem 1 ****
 # Write a function called print_message() that prints any message you want.
-
+def print_message():
+	print("hi")
+print_message()
 
 # **** Challenge 1: Problem 2 ****
 # Write a function called print_five_messages() that calls print_message() five times.
+def print_five_messages():
+	print_message()
+	print_message()
+	print_message()
+	print_message()
+	print_message()
 
-
+print_five_messages()
 # **** Challenge 1: Problem 3 ****
 # Write a function called get_user_input() that asks the user if they'd like to print your message
 # once or five times. Then call one of the two functions above based on what the user decides.
+def get_user_input():
+	feed=input("Would you like your message printed once or five times?:")
+	if feed == 1:
+		print_message()
+	else:
+		print_five_messages()
 
-
+get_user_input()
 # **** Challenge 1: Problem 4 ****
 # Write a function called print_greeting() that prints a greeting message to the user.
-
+def print_greeting():
+	print("Waddup yo")
+print_greeting()
 
 # **** Challenge 1: Problem 5 ****
 # Write a function called print_closing() that prints a goodbye message to the user.
 
-
+def print_closing():
+	print("Peace yo")
+print_closing()
 # **** Challenge 1: Problem 6 ****
 # Write a function called run() that greets the user, asks them for input, and sends a goodbye message.
 # Remember! Use the functions that you've already made. Don't hardcode anything!
-
-
+def run():
+	print_greeting()
+	get_user_input()
+	print_closing()
+run()
 
 # -------------------------------------------- 
 
@@ -64,7 +85,18 @@ print("------------------- Challenge 2 -------------------")
 		# sum_double(2, 2) → 8
 
 # -------------------------------------------- 
+def sum_double(num1,num2):
+	num3 = num1 + num2
+	if num1 == num2:
+		final = num3 * 2
+		print(final)
+	else:
+		print(num3)
+sum_double(5, 5)
 
+		
+	
+	
 
 
 
@@ -85,7 +117,10 @@ print("------------------- Challenge 2 -------------------")
 		# makes_10(1, 9) → True
 
 # -------------------------------------------- 
-
+def makes_10(a,b):
+	print(a == 10 or b == 10)
+	print((a + b) == 10)
+makes_10(5,5)
 
 
 
@@ -112,6 +147,22 @@ print("------------------- Challenge 2 -------------------")
 # -------------------------------------------- 
 
 
+def alarm_clock(Date, Vac):
+	if Vac == True and (Date > 0 and Date < 6):
+		alarm = "10:00"
+		print(alarm)
+	elif Vac == True and (Date == 0 or Date == 6):
+		alarm = "off"
+		print(alarm)
+	elif Vac == False and (Date > 0 and Date < 6):
+		alarm = "7:00"
+		print(alarm)
+	# elif Vac == True and (Date == 0 or Date == 6):
+	else:
+		alarm = "10:00"
+		print(alarm)
+alarm_clock(0, False)
+
 
 
 
@@ -137,8 +188,17 @@ print("------------------- Challenge 2 -------------------")
 # -------------------------------------------- 
 
 
-
-
+def tickets(speed):
+	if speed <= 60:
+		ticket = 0
+		print(ticket)
+	elif speed < 60 and speed >= 80:
+		ticket = 1
+		print(ticket)
+	else:
+		ticket = 2
+		print(ticket)
+tickets(90)
 
 
 
