@@ -1,5 +1,6 @@
-#********************************************************************
- #                                                                  
+#********************************************************************\
+import random                                    
+from random import randint                            
  #  Team Edge Mini-project: WHILE LOOP CHALLENGES
  # 
  #   Complete the following loop challenges below. Follow the ToDos
@@ -41,7 +42,12 @@ def test_prime(n):
     return True
 
 #-->TODO: Declare a while loop that prints all the prime numbers between 0 and 100, use test_prime() helper function
-
+n = 1
+while n <= 100:
+    if test_prime(n):
+      print(n)
+    n+=1
+       
 
 
 print("------------------- CHALLENGE 2 : FOUND   -------------------")
@@ -50,7 +56,12 @@ print("------------------- CHALLENGE 2 : FOUND   -------------------")
 items = ["pencil" , "eraser" , "mirror" , "comb" , "spoon" , "key" , "earrings" ,"cat food" , "magazine"]
 
 #-->TODO: Use a while loop to search the contents of a list for the key! If it exists, print "found the key!"
-
+found = False
+i = 0
+while i < len(items):
+  if items[i] == "key":
+   print("Found key at " + str(i))
+  i+=1
 
 
 print("------------------- CHALLENGE 3 : BUGGIN   -------------------")
@@ -61,9 +72,11 @@ print("------------------- CHALLENGE 3 : BUGGIN   -------------------")
 #-->TODO: Make me count  2, 4, 6,..., 50
 
 def even_numbers_to_fifty():
-    num = 50
-    while num < 50:
+    num = 0
+    while num <= 50:
+      if num % 2 == 0:
         print("number: " + str(num))
+      num+=1
 
 even_numbers_to_fifty()
 
@@ -85,13 +98,18 @@ even_numbers_to_fifty()
 
 def pattern():
 
-    index = 0 
+    index = 0
     my_list =[]
     
     while index <= 5:
         my_list.append(index)
         print(my_list)
         index += 1
+    while index < 11:
+        my_list.pop()
+        print(my_list)
+        index += 1
+
 
 pattern()
 
@@ -103,9 +121,15 @@ print("------------------- CHALLENGE 4 : MATH QUIZ   -------------------")
 #-->TODO: Make a Math Quiz that asks two random numbers (between 0 and 100 to make it easy).
 #         The user enters the answer. If wrong, keep prompting. If correct, say congrats!!
 #         Use this handy boolean to get you started! You will need input()!
-
+x = randint(1,100)
+y = randint(1,100)
+answers = x + y
+print(f"{x} + {y})
 is_correct = False
-
+answer = input("-->")
+while is_correct
+  if input("")  
+  
 
 print("------------------- CHALLENGE 5 : WHAT AM I?   -------------------")
 
