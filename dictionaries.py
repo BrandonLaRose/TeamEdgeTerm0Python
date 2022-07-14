@@ -37,10 +37,15 @@ print(dictionary)
  
 
 #-->TODO: Declare a new dictionary and set at least 4 properties to it including: string, boolean, number, list
-
+newdic = {
+    "number": 1,
+    "Boolean": True,
+    "string": "Hello",
+    "list": ["item1", "item2"]
+}
 ##################################  MY dictionary ########################### #/
 
-
+print(newdic)
 
 
 
@@ -56,20 +61,28 @@ print("------------------- CHALLENGE 2 : MODIFY   -------------------")
 
 #-->TODO: Update the dictionary you just created  by adding new properties and values, including list elements, in this section.
 
-
+newdic["list"].append("item3")
 #-->TODO: Print your dictionary again and observe changes
-
+print(newdic)
 
 print("------------------- CHALLENGE 3 : MEHTODS   -------------------")
 
 
 #-->TODO: Make a method that will update your dictionary value. It should take in a dictionary and return it modified.
+name_dic = {
+        "person1": "1",
+        "person2": "2"}
 
-
+def update(anydic, value, key):
+    # global name_dic
+    anydic[value] = key
 #-->TODO: Call the method.
+    print(anydic)
 
+update(name_dic, "Brandon", "L")
 
 
 print("------------------- CHALLENGE 4 : LITERALLY   -------------------")
 
 #-->TODO: Put it all together using a string literal to tell the story of your dictionary!
+ 
