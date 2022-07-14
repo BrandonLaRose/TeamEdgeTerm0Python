@@ -121,15 +121,15 @@ print("------------------- CHALLENGE 4 : MATH QUIZ   -------------------")
 #-->TODO: Make a Math Quiz that asks two random numbers (between 0 and 100 to make it easy).
 #         The user enters the answer. If wrong, keep prompting. If correct, say congrats!!
 #         Use this handy boolean to get you started! You will need input()!
-x = randint(1,100)
-y = randint(1,100)
-answers = x + y
-print(f"{x} + {y})
-is_correct = False
-answer = input("-->")
-while is_correct
-  if input("")  
-  
+# x = randint(1,100)
+# y = randint(1,100)
+# answers = x + y
+# print(f"{x} + {y}")
+# is_wrong = True
+# while is_wrong:
+#   answer = input("-->")
+#   if int(answer) == answers:
+#     is_wrong = False
 
 print("------------------- CHALLENGE 5 : WHAT AM I?   -------------------")
 
@@ -137,17 +137,19 @@ print("------------------- CHALLENGE 5 : WHAT AM I?   -------------------")
 #         You are given two starter functions and a loop to get started! 
 #         Notice how one function calls the other and uses the returned value as the input. This is called Recursion! 
 
-keep_asking = False
+keep_asking = True
 
 def prompt_user():
-    pass
-
+  answer = input("I know you are a ______, but what am I?:")
+  return answer
 def response(response):
-    pass
-
+    print(":nerd: akctually your're a " + response)
+    if response == "loser":
+      global keep_asking
+      keep_asking = False
+      print("Ok sorry damn")
 while keep_asking:
-    #response(prompt_user())
-    pass
+    response(prompt_user())
 
 #-->TODO: Challenge! write a secret word to break out of the loop!
 
