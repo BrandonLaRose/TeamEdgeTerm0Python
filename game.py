@@ -54,22 +54,29 @@ print(
 
 print("You are now going to choose a room: \n")
 
-Gym = Room("Gym", [
-    "sword",
-    "barbell",
 
-])
 # magicWandLocation = randint(1,4)
 # if magicWandLocation == 1:
 #   Courtyard.items.append("magic wand")
 
-  
 list1 = ["cat", "flame-thrower"]
 list2 = ["tiger", "potion",]
 list3 = ["books", "shoes", "disco-ball"]
-Courtyard = Room("Courtyard", ["cat", "flame-thrower"])
-Laboratory = Room("Laboratory", ["tiger", "potion", "magic wand"])
-Bigoyard = Room("Bigoyard", ["books", "shoes", "disco-ball"])
+list4 = ["sword", "barbell"]
+magicWandLocation = randint(1,4)
+if magicWandLocation == 1:
+  list1.append("magic wand")
+elif magicWandLocation == 2:
+  list2.append("magic wand")
+elif magicWandLocation == 3:
+  list3.append("magic wand")
+elif magicWandLocation == 4:
+  list4.append("magic wand")
+  
+Gym = Room("Gym",list4)
+Courtyard = Room("Courtyard", list1)
+Laboratory = Room("Laboratory", list2)
+Bigoyard = Room("Bigoyard", list3)
 Rooms = Rooms([Gym, Courtyard, Laboratory, Bigoyard])
 
 
@@ -97,7 +104,7 @@ def enterArea(area):
         print("Inventory:\n" + str(inventory))
     if "magic wand" == item:
         playing = False
-        print("You found the magic wand! You win! HOLY SHIT WWWWWW")
+        print("You found the magic wand! You win! HOLY **** WWWWWW")
     elif item not in area.items:
         print("\nThis item isn't in this room!\n")
 
