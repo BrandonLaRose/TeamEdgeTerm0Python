@@ -1,121 +1,136 @@
 #################################################
 # Code Tutorial
 #
-#Random items in everyroom?
 #
 #
-# sword(good), pet-tiger(good), poison(bad), books(good), (knife), bottle of blood(good),
 #
-#3 items of each room
+# Items: sword(good), pet-tiger(good), poison(bad), books(good), (knife), bottle of blood(good),
+#WE NEED CLASS WITH 2 THINGS INSIDE
+#.
+#
+#TODO:
+#Add commands (rooms, exit, leave(like leave room), inventory, etc; ) (Display rooms when choose room)
+#Add classes (room or player)
+#Remove lists with (remove) so there are no dupes in a room!
+#
+#Probably make an action while thing so you can type move, exit, rooms, stuff like that(Like if someone types move, then it can show the "Choose a room" command. Thoughts?)
+#If in inventory then dont display that item from list
 #
 # https://sites.google.com/csedge.org/team-edge-web-python/term-0/lab-78-dictionaries/project-choose-your-own-adventure?authuser=0
 ###################################################
-
+from random import randint
+randint(0,10)
 import os
+
+
 #os.system("clear")
+class x:
+    def __init__(self, anything):
+        self.anything = "text"
+
+
+class Room:
+    def __init__(self, name, items):
+        self.name = name
+        self.items = items
+
+
+class Rooms:
+    def __init__(self, rooms):
+        self.rooms = rooms
+
 
 ## TO DO
-# 
+#
 welcome_prompt = ("wElcoMe t0 mY coll3ct G@me")
 print(welcome_prompt)
 
 username = input("\nEnter username:")
 print("Welcome " + username)
 
-print("There are 4 rooms you are able to navigate in, start in whichever room you want dude\n")
+print(
+    "There are 4 rooms you are able to navigate in, start in whichever room you want dude\n"
+)
 
-print("Welcome to the game, you are now going to choose a room: \n")
+print("You are now going to choose a room: \n")
+
+Gym = Room("Gym", [
+    "sword",
+    "barbell",
+
+])
+# magicWandLocation = randint(1,4)
+# if magicWandLocation == 1:
+#   Courtyard.items.append("magic wand")
+
+  
+list1 = ["cat", "flame-thrower"]
+list2 = ["tiger", "potion",]
+list3 = ["books", "shoes", "disco-ball"]
+Courtyard = Room("Courtyard", ["cat", "flame-thrower"])
+Laboratory = Room("Laboratory", ["tiger", "potion", "magic wand"])
+Bigoyard = Room("Bigoyard", ["books", "shoes", "disco-ball"])
+Rooms = Rooms([Gym, Courtyard, Laboratory, Bigoyard])
 
 
-rooms = ["Gym", "Courtyard", "Bigoyard", "Laboratory"]
 
-Courtyard = ["cat","dog"]
-Gym = ["barbell","sword"]
-Laboratory = ["tiger", "potion", "magic wand"]
-Bigoyard = ["books", "shoes", "disco-ball"]
+# Courtyard = ["cat", "flame-thrower"]
+#Gym = ["barbell", "sword"]
+#Laboratory = ["tiger", "potion", "magic wand"]
+# Bigoyard = ["books", "shoes", "disco-ball"]
 
 inventory = []
-
-def enterGym():
-  os.system("clear")
-  print("Welcome to the gym!!!")
-  print("Gym Items:\n")
-  for item in Gym:
-    print(item)
-  gymItem = input("\nChoose an item:")
-  if gymItem in Gym:
-    inventory.append(gymItem)
-    print(gymItem+" chosen!")
-    print("Inventory:" + str(inventory))
-  else:
-    print("This item isn't in this room!")
-  
-def enterCourtYard():
-  os.system("clear")
-  print("Welcome to the courtyard!!")
-  print("Courtyard Items:")
-  for item in Courtyard:
-    print(item)
-  courtyardItem = input("\nChoose an item:")
-  if courtyardItem in Courtyard:
-    inventory.append(courtyardItem)
-    print(courtyardItem + " chosen!")
-    print("Inventory:" + str(inventory))
-  
-def enterBigoyard():
-  os.system("clear")
-  print("Welcome to the Bigoyard!")
-  print("Bigoyard items:")
-  for item in Bigoyard:
-    print(item)
-  bigoyardItem = input("\nChoose an item:")
-  print(bigoyardItem + " chosen!")
-  if item in Bigoyard:
-    inventory.append(item)
-    print(item + " chosen!")
-    print("Inventory:" + str(inventory))
-      
-def enterLabortory():
-  os.system("clear")
-  print("Welcome to the Laboratory!")
-  print("Laboratory items:")
-  for item in Laboratory:
-    print(item)
-  labItem = input("\nChoose an item:")
-  print(labItem + " chosen!")
-  if item in Laboratory:
-    inventory.append(item)
-    print(item + " chosen!")
-    print("Inventory:" + str(inventory))
+playing = True
 
 
-print("Rooms")
-for room in rooms:
-  print(room)
+def enterArea(area):
+    global playing
+    os.system("clear")
+    print("Welcome to the " + area.name + " !!!")
+    print(area.name + "Items:\n")
+    for item in area.items:
+        print(item)
+    item = input("\nChoose an item:\n")
+    if item in area.items:
+        inventory.append(item)
+        print(item + " chosen!\n")
+        print("Inventory:\n" + str(inventory))
+    if "magic wand" == item:
+        playing = False
+        print("You found the magic wand! You win! HOLY SHIT WWWWWW")
+    elif item not in area.items:
+        print("\nThis item isn't in this room!\n")
 
 
-while True:   
-  
-  pickedRoom = input("\nChoose a room:")
-  if(pickedRoom not in rooms):
-    print("Room not valid dude :(")
-  
-  if(pickedRoom == "Gym"):
-    enterGym()
+while playing:
 
-  if(pickedRoom == "Courtyard"):
-    enterCourtYard()
-  
-  if(pickedRoom == "Laboratory"):
-    enterLabortory()
+    # print("Rooms")
+    # for room in rooms:
+    #   print(room)
+    if playing == False: 
+        break
 
-  if(pickedRoom == "Bigoyard"):
-    enterBigoyard()
+    for room in Rooms.rooms:
+      print(room.name)
+    pickedRoom = input("\nChoose a room:")
 
 
+    if (pickedRoom not in Rooms.rooms):
+        print("Room not valid dude :( ")
+    print("\n")  
+    for room in Rooms.rooms:
+      if pickedRoom == room.name:
+        enterArea(room) 
+        
+    # if (pickedRoom in "Gym"):
+    #     enterArea(Gym)
 
+    # if (pickedRoom == "Courtyard"):
+    #     enterArea(Courtyard)
 
-  
+    # if (pickedRoom == "Laboratory"):
+    #     enterArea(Laboratory)
 
-
-  
+    # if (pickedRoom == "Bigoyard"):
+    #     enterArea(Bigoyard)
+print("You won kid")
